@@ -1,0 +1,71 @@
+/* ======================
+   RESPONSIVE DESIGN
+   ====================== */
+
+@media (max-width: 1024px) {
+  .controls-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .control-group {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .custom-section {
+    border-left: none;
+    border-top: 2px solid #e9ecef;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .time-buttons {
+    flex-wrap: wrap;
+  }
+
+  .coin-legend {
+    justify-content: center;
+  }
+
+  .chart-area {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .method-tab {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .time-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .custom-select-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .action-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .mockup-note {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .theme-toggle {
+    padding: 8px;
+  }
+}

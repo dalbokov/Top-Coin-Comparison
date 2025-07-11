@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crypto Chart Comparison</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+  <div class="theme-toggle">🌙</div>
+
+  <div class="container">
+    <div class="header">
+      <h1>Crypto Performance Comparison</h1>
+      <p>Compare cryptocurrency performance over different time periods</p>
+    </div>
+
+    <div class="main-content">
+      <!-- Controls Section -->
+      <div class="controls-section">
+        <h3>Choose Criteria:</h3>
+
+        <div class="selection-method">
+          <div class="method-tab active" data-method="market-cap">📊 By Market Cap</div>
+          <div class="method-tab" data-method="category">🏷️ By Category</div>
+        </div>
+
+        <div class="controls-row">
+          <div class="control-group">
+            <label for="coins-count">Number of coins:</label>
+            <select id="coins-count" class="dropdown">
+              <option value="5">5 coins</option>
+              <option value="10" selected>10 coins</option>
+            </select>
+          </div>
+
+          <div class="control-group" id="market-cap-group">
+            <label for="market-cap">Market Cap Range:</label>
+            <select id="market-cap" class="dropdown">
+              <option value="100" selected>Top 100</option>
+              <option value="200">Top 200</option>
+              <option value="300">Top 300</option>
+            </select>
+          </div>
+
+          <div class="control-group" id="category-group" style="display: none;">
+            <label for="category">Category:</label>
+            <select id="category" class="dropdown">
+              <option value="l1s">L1s (Bitcoin, Ethereum)</option>
+              <option value="l2s">L2s (Polygon, Arbitrum)</option>
+              <option value="ai">AI (Fetch.ai, SingularityNET)</option>
+              <option value="memes">Memes (Dogecoin, Shiba)</option>
+              <option value="gaming">Gaming (Axie, Sandbox)</option>
+              <option value="rwa">RWA (Real World Assets)</option>
+              <option value="defi">DeFi (Uniswap, Aave)</option>
+              <option value="infrastructure">Infrastructure</option>
+              <option value="exchange">Exchange Tokens</option>
+            </select>
+          </div>
+
+          <div class="custom-section">
+            <div class="control-group">
+              <label>Custom Selection:</label>
+              <button class="custom-select-btn" id="custom-select">🔍 Select specific coins</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart Container -->
+      <div class="chart-container">
+        <div class="chart-header">
+          <div class="time-buttons" id="time-buttons">
+            <button class="time-btn" data-period="7">7 days</button>
+            <button class="time-btn" data-period="10">10 days</button>
+            <button class="time-btn active" data-period="30">30 days</button>
+            <button class="time-btn" data-period="90">90 days</button>
+            <button class="time-btn" data-period="180">180 days</button>
+            <button class="time-btn" data-period="365">365 days</button>
+          </div>
+          <div class="coin-legend" id="coin-legend"></div>
+        </div>
+
+        <div class="chart-area">
+          <canvas id="priceChart" width="800" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button class="action-btn" id="export-btn">📊 Export Chart</button>
+      <button class="action-btn" id="share-btn">🔗 Share URL</button>
+      <button class="action-btn" id="embed-btn">📱 Embed Code</button>
+      <button class="action-btn" id="alert-btn">🔔 Set Alert</button>
+    </div>
+  </div>
+
+  <div class="mockup-note">
+    📝 This is a design mockup - functionality will be implemented in the final version
+  </div>
+
+  <!-- Modal for Custom Coin Picker -->
+  <div id="custom-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-modal">&times;</span>
+      <h2>Select Coins</h2>
+      <div id="coin-picker-list"></div>
+      <button id="confirm-custom-coins" class="custom-select-btn">✔️ Confirm Selection</button>
+    </div>
+  </div>
+
+  <!-- JS scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/custom-picker.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
